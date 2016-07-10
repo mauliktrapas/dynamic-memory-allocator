@@ -33,9 +33,9 @@ team_t team = {
 	/* First member's email address */
 	"201401051@daiict.ac.in",
 	/* Second member's full name (leave blank if none) */
-	"Shibajyoti Debbarma",
+	"no one",
 	/* Second member's email address (leave blank if none) */
-	"201401062@daiict.ac.in"
+	"noone@daiict.ac.in"
 };
 
 /* Basic constants and macros: */
@@ -67,7 +67,7 @@ team_t team = {
 /* to get next and previous ptr in the list */
 
 #define GET_NEXT_PTR(bp)  (*(char **)(bp + WSIZE))
-#define GET_PREV_PTR(bp)  (*(char **)(bp)
+#define GET_PREV_PTR(bp)  (*(char **)(bp))
 
 /* Put new pointer(np) in the next and previous elements of free list */
 #define SET_NEXT_PTR(bp, np) (GET_NEXT_PTR(bp) = np)
@@ -433,6 +433,7 @@ checkheap(bool verbose)
 /*
  * Requires:
  *   "bp" is the address of a block.
+ *
  * Effects:
  *   Print the block "bp".
  */
